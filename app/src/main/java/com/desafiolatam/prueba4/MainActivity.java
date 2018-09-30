@@ -7,7 +7,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.desafiolatam.prueba4.model.QuoteModel;
 
-public class MainActivity extends AppCompatActivity implements QuoteFragment.OnListFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,8 +22,5 @@ public class MainActivity extends AppCompatActivity implements QuoteFragment.OnL
         fragmentTransaction.commit();
     }
 
-    @Override
-    public void onListFragmentInteraction(QuoteModel item) {
 
-    }
 }

@@ -5,8 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.desafiolatam.prueba4.QuoteFragment.OnListFragmentInteractionListener;
 import com.desafiolatam.prueba4.model.QuoteModel;
 
 import java.util.List;
@@ -14,11 +12,9 @@ import java.util.List;
 public class MyQuoteRecyclerViewAdapter extends RecyclerView.Adapter<MyQuoteRecyclerViewAdapter.ViewHolder> {
 
     private final List<QuoteModel> mValues;
-    private final OnListFragmentInteractionListener mListener;
 
-    public MyQuoteRecyclerViewAdapter(List<QuoteModel> items, OnListFragmentInteractionListener listener) {
+    public MyQuoteRecyclerViewAdapter(List<QuoteModel> items) {
         mValues = items;
-        mListener = listener;
     }
 
     @Override
@@ -30,21 +26,10 @@ public class MyQuoteRecyclerViewAdapter extends RecyclerView.Adapter<MyQuoteRecy
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        //holder.mItem = mValues.get(position);
+
         holder.mQuoteView.setText(mValues.get(position).getQuote());
         holder.mAuthorView.setText(mValues.get(position).getAuthor());
         holder.mCategoryView.setText(mValues.get(position).getCategory());
-
-        /*holder.mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
-                }
-            }
-        });*/
     }
 
     @Override
@@ -53,15 +38,13 @@ public class MyQuoteRecyclerViewAdapter extends RecyclerView.Adapter<MyQuoteRecy
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final View mView;
+
         public final TextView mQuoteView;
         public final TextView mAuthorView;
         public final TextView mCategoryView;
-        //public QuoteModel mItem;
 
         public ViewHolder(View view) {
             super(view);
-            mView = view;
             mQuoteView = (TextView) view.findViewById(R.id.quoteTv);
             mAuthorView = (TextView) view.findViewById(R.id.authorTv);
             mCategoryView = (TextView) view.findViewById(R.id.categoryTv);

@@ -21,7 +21,6 @@ import retrofit2.Response;
 
 public class QuoteFragment extends Fragment {
 
-    private OnListFragmentInteractionListener mListener;
     RecyclerView recyclerView;
     MyQuoteRecyclerViewAdapter adapter;
 
@@ -36,7 +35,6 @@ public class QuoteFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
@@ -61,7 +59,7 @@ public class QuoteFragment extends Fragment {
         quotesRequest.enqueue(new Callback<List<QuoteModel>>() {
             @Override
             public void onResponse(Call<List<QuoteModel>> call, Response<List<QuoteModel>> response) {
-                MyQuoteRecyclerViewAdapter adapter = new MyQuoteRecyclerViewAdapter(response.body() ,mListener);
+                MyQuoteRecyclerViewAdapter adapter = new MyQuoteRecyclerViewAdapter(response.body());
                 recyclerView.setAdapter(adapter);
             }
 
@@ -72,24 +70,5 @@ public class QuoteFragment extends Fragment {
         });
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnListFragmentInteractionListener) {
-            mListener = (OnListFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnListFragmentInteractionListener");
-        }
-    }
 
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-    public interface OnListFragmentInteractionListener {
-        void onListFragmentInteraction(QuoteModel item);
-    }
 }
