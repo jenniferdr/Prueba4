@@ -20,10 +20,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
-    <!--<fragment
-        android:name="com.desafiolatam.prueba4"
-        /> -->
+    <fragment
+        android:id="@+id/listfragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:name="com.desafiolatam.prueba4.QuoteFragment"
+        />
 
 
 </android.support.design.widget.CoordinatorLayout>

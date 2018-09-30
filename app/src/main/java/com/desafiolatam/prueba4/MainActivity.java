@@ -16,10 +16,10 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        QuoteFragment quoteFrag = QuoteFragment.newInstance();
+        /*QuoteFragment quoteFrag = QuoteFragment.newInstance();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.QuoteListFragment, quoteFrag);
-        fragmentTransaction.commit();
+        fragmentTransaction.commit();*/
     }
 
 
