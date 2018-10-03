@@ -9,7 +9,8 @@
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:layout_marginBottom="16dp">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -24,6 +25,7 @@
         android:id="@+id/listfragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
         android:name="com.desafiolatam.prueba4.QuoteFragment"
         />
 
